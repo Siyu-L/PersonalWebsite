@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+.header {
+    background-image: url('ocean.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 30px;
+    font-size: 30px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.603);
+    margin:-10px;
+
+    display: flex;
+    justify-content: center;
+}
+.header h1 {
+    font-family: "Bodoni Moda", serif;
+    margin-inline: auto;
+    overflow: hidden;
+    /* keep to single line*/
+    white-space: nowrap;
+    /*cursor*/
+    border-right: 1px solid white;
+    animation: typing 3s steps(20) forwards, blink 1s step-end 3s infinite;
+
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+
+}
