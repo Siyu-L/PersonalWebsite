@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Text:ital@0;1&display=swap');
 .header {
     background-image: url('ocean.jpg');
     background-repeat: no-repeat;
@@ -15,15 +15,30 @@
     justify-content: center;
 }
 .header h1 {
-    font-family: "Bodoni Moda", serif;
+    font-family: "Bodani Moda", serif;
     margin-inline: auto;
     overflow: hidden;
     /* keep to single line*/
     white-space: nowrap;
     /*cursor*/
     border-right: 1px solid white;
-    animation: typing 3s steps(20) forwards, blink 1s step-end 3s infinite;
+    animation: typing 3s steps(20) forwards, blink 1s step-end infinite;
 
+}
+
+h1.stop-blinking {
+    animation: typing 3s steps(20) forwards;
+    border-right: none;
+
+}
+
+
+h2,p {
+    font-family: "DM Serif Text", serif;
+    margin-inline: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center
 }
 
 @keyframes typing {
@@ -38,6 +53,9 @@
 
 @keyframes blink {
     50% {
+        border-color: transparent;
+    }
+    100% {
         border-color: transparent;
     }
 
