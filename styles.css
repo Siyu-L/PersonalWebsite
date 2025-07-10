@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Text:ital@0;1&display=swap');
+
+
+body {
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+
+}
+
+
 .header {
     background-image: url('ocean.jpg');
     background-repeat: no-repeat;
@@ -9,11 +19,14 @@
     font-size: 30px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgba(255, 255, 255, 0.603);
-    margin:-10px;
 
+    padding: 0 20px 20px 20px;
+    border: 3px solid black;
     display: flex;
     justify-content: center;
 }
+
+
 .header h1 {
     font-family: "Bodani Moda", serif;
     margin-inline: auto;
@@ -26,6 +39,18 @@
 
 }
 
+.body {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 10px solid black;    
+    background-color: black;
+    color: white;
+    padding: 0 20px 20px 20px;
+
+
+}
+
+
 h1.stop-blinking {
     animation: typing 3s steps(20) forwards;
     border-right: none;
@@ -33,13 +58,31 @@ h1.stop-blinking {
 }
 
 
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+.contact {
+    width: 75%
+
+}
+
 h2,p {
     font-family: "DM Serif Text", serif;
     margin-inline: auto;
-    overflow: hidden;
     white-space: nowrap;
-    text-align: center
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: normal;
 }
+
+
 
 @keyframes typing {
     from {
@@ -53,9 +96,6 @@ h2,p {
 
 @keyframes blink {
     50% {
-        border-color: transparent;
-    }
-    100% {
         border-color: transparent;
     }
 
