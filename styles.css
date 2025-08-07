@@ -1,62 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@87.5,300&display=swap');
+
 
 
 body {
-    max-height: 100%;
+    color: white;
+    font-family: "DM Serif Text", serif;
+    margin: 0;
+    padding: 0;
     overflow-y: auto;
     overflow-wrap: break-word;
 
 }
 
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
 
 .header {
-    background-image: url('ocean.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 30px;
+    padding: 10px;
     font-size: 30px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(255, 255, 255, 0.603);
-
-    padding: 0 20px 20px 20px;
-    border: 3px solid black;
+    border: none;
     display: flex;
     justify-content: center;
-}
+    position: relative;
 
-
-.header h1 {
-    font-family: "Bodani Moda", serif;
+    font-family: "Inconsolata", serif;
     margin-inline: auto;
     overflow: hidden;
-    /* keep to single line*/
     white-space: nowrap;
-    /*cursor*/
-    border-right: 1px solid white;
-    animation: typing 3s steps(20) forwards, blink 1s step-end infinite;
 
 }
+
 
 .body {
     max-width: 500px;
     margin: 0 auto;
-    border: 10px solid black;    
-    background-color: black;
     color: white;
     padding: 0 20px 20px 20px;
 
 
 }
-
-
-h1.stop-blinking {
-    animation: typing 3s steps(20) forwards;
-    border-right: none;
-
-}
-
 
 
 .contact-container {
@@ -68,7 +57,10 @@ h1.stop-blinking {
 }
 .contact {
     width: 75%
+}
 
+.contact:hover{
+    transform: scale(1.2)
 }
 
 h2,p {
@@ -80,23 +72,4 @@ h2,p {
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: normal;
-}
-
-
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-
 }
