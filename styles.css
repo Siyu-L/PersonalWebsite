@@ -25,11 +25,9 @@ canvas {
 .header {
     padding: 10px;
     font-size: 30px;
-    border: none;
     display: flex;
     justify-content: center;
     position: relative;
-
     font-family: "Inconsolata", serif;
     margin-inline: auto;
     overflow: hidden;
