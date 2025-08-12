@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Text:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@87.5,300&display=swap');
 
-
+/* --- Global Styles --- */
 
 body {
     color: white;
@@ -22,13 +22,19 @@ canvas {
 }
 
 
+/* --- Layout Sections --- */
+
+.header, .body, .contact-container {
+  padding: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
 .header {
-    padding: 10px;
     font-size: 30px;
     display: flex;
     justify-content: center;
-    position: relative;
-    font-family: "Inconsolata", serif;
+    font-family: "DM Serif", serif;
     margin-inline: auto;
     overflow: hidden;
     white-space: nowrap;
@@ -40,18 +46,14 @@ canvas {
     max-width: 500px;
     margin: 0 auto;
     color: white;
-    padding: 0 20px 20px 20px;
-
-
+    padding-bottom: 20px;
 }
 
 
 .contact-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-
-    
+    align-items: center;    
 }
 .contact {
     width: 75%
@@ -61,19 +63,30 @@ canvas {
     transform: scale(1.2)
 }
 
+/* --- Typography --- */
+
 h2,p {
     font-family: "DM Serif Text", serif;
     margin-inline: auto;
-    white-space: nowrap;
     text-align: center;
-    white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: normal;
 }
 
-.header, .body, .contact-container {
-  padding: 2rem;
-  z-index: 1;
-  position: relative;
+/* --- Links --- */
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(110, 110, 110);
+    background-color: transparent;
+    text-decoration: none;
 }

@@ -33,10 +33,11 @@ function init() {
   mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
 
-  // Optional controls (mouse orbit)
+  /* Optional controls (mouse orbit)
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
   controls.dampingFactor = 0.1;
+  */
 }
 
 function animate() {
@@ -51,7 +52,7 @@ function animate() {
     const x = pos.getX(i);
     const y = pos.getY(i);
     const z = pos.getZ(i);
-    const wave = Math.sin(x * 0.2 + time) * Math.cos(z * 0.2 + time) * 2;
+    const wave = Math.sin(x * 0.2 + time) * Math.cos(z * 0.2 + time) * 3;
     pos.setY(i, wave);
   }
   pos.needsUpdate = true;
