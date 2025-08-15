@@ -1,3 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Text:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@87.5,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 
+
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    background: black;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+
+
+.proj-header {
+    font-size: 4em;
+    display: flex;
+    text-align: left;
+    font-family: "Inconsolata", serif;
+    margin-inline: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    border-color: white;
+    background-color: transparent;
+    padding-left: 3%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    
+}
+
+.main {
+    display: flex;
+    flex: 1;
+}
+
+.tab {
+    float: left;
+    border: none;
+    width: 15%;
+    height: 70vh;
+    flex-direction: column;
+    background-color: transparent;
+    padding-left: 3%;
+    padding-right: 5%
+}
+
+.tab button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-family: "Inconsolata", serif;
+
+    width: 100%;
+    text-align: left;
+    font-size: 2.5em;
+    height: 20%
+
+}
