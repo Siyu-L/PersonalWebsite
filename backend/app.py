@@ -1,15 +1,24 @@
 from flask import Flask, request, jsonify
-import spamfilter
+import SpamFilter
 
 app = Flask(__name__)
+spam_filter = SpamFilter.SpamFilter(
+    ham_dir = "SpamFilter\training_data\train\ham",
+    spam_dir = "SpamFilter\training_data\train\spam",
+    smoothing = 1e-5
+)
+
 
 @app.route("/classify_text", methods=["POST"])
 def classify_text():
     data = request.get_json()
     text = data.get("text", "")
-    sf = spamfilter.SpamFilter()
-    prediction = sf.is_spam()
-    return jsonify({"prediction": prediction})
+    prediction = spam_filter.is_spam(text)
+    indicate_spam = spam_filter.most_indicative_spam(5)
+    indicate_ham = spam_filter.most_indicative_ham(5)
+    return jsonify({"prediction": prediction, 
+                    "indicate spam": indicate_spam, 
+                    "indicate ham": indicate_ham })
 
 
 @app.route("/classify_file", methods=["POST"])
@@ -18,9 +27,12 @@ def classify_file():
         return jsonify({"error": "No file provided"}), 400
     
     file = request.files["file"]
-    sf = spamfilter.SpamFilter()
-    prediction = sf.is_spam(file)
-    return jsonify({"prediction": prediction})
+    prediction = spam_filter.is_spam(file)
+    indicate_spam = spam_filter.most_indicative_spam(5)
+    indicate_ham = spam_filter.most_indicative_ham(5)    
+    return jsonify({"prediction": prediction, 
+                    "indicate spam": indicate_spam, 
+                    "indicate ham": indicate_ham })
 
 
 if __name__ == "__main__":

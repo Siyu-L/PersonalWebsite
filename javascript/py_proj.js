@@ -1,7 +1,7 @@
 async function classifyMessage() {
     const userInput = document.getElementById("user-input").value;
 
-    const response = await fetch("https://localhost:5000/classify", {
+    const response = await fetch("https://localhost:5000/classify_text", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({text: userInput})

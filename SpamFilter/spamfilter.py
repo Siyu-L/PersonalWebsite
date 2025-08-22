@@ -4,6 +4,13 @@ import math
 import os
 
 
+def load_text(text_input):
+    tokens = list()
+    tokens.extend(text_input.strip().split())
+    return tokens
+
+
+
 def load_tokens(email_path):
     tokens = list()
     file = open(email_path, 'r', encoding='utf-8', errors='ignore')
@@ -69,9 +76,14 @@ class SpamFilter(object):
         self.p_ham = num_ham / (num_spam + num_ham)
 
 
-    def is_spam(self, email_path):
+    def is_spam(self, email_path, text_input):
         # log P(C|X) ~ log P(C) + sum over i to n (log P(xi|C))
-        tokens = load_tokens(email_path)
+        
+        tokens = []
+        if text_input is None:
+            tokens = load_tokens(email_path)
+        if email_path is None:
+            tokens = load_text(text_input)
         p_spam_doc = math.log(self.p_spam)
         p_ham_doc = math.log(self.p_ham)
         
@@ -112,7 +124,7 @@ class SpamFilter(object):
         shared_words = set(self.spam_dict.keys()) & set(self.ham_dict.keys())
         shared_words.remove("<UNK>")
 
-        # get all ham3 indication values
+        # get all ham indication values
         # store in list as tuple of (word, value)
         indication_vals = list()
         for w in shared_words:
