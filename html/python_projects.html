@@ -19,20 +19,22 @@
 
     <script type="module" src="../javascript/py_proj.js"></script>
 
-    <div class="proj-header">Python Projects</div>
+    <div id="proj-header">Python Projects</div>
 
     <div class="main">
         <div class="tab">
-            <button class="tablinks" onclick="openProj(event, 'spam-filter')">Spam Filter</button>
-            <button class="tablinks" onclick="openProj(event, 'Temp1')">Temp 1</button>
-            <button class="tablinks" onclick="openProj(event, 'Temp2')">Temp 2</button> 
+            <button class="tablinks" onclick="openProj(event, 'spam-filter', 'Spam Filter')">Spam Filter</button>
+            <button class="tablinks" onclick="openProj(event, 'Temp1', 'Temp1')">Temp 1</button>
+            <button class="tablinks" onclick="openProj(event, 'Temp2', 'Temp2')">Temp 2</button> 
         </div>
 
 
 
         <div id="spam-filter" class="tabcontent">
             <h3>Spam Filter</h3>
-            <p>Words words words.</p>
+            <input id="user-input" type="text" placeholder="Enter a message">
+            <button onclick="classifyMessage()">Check</button>
+            <p id="result"></p>
         </div>
 
         <div id="Temp1" class="tabcontent">

@@ -24,7 +24,7 @@ canvas {
 /* --- Layout Sections --- */
 
 
-.proj-header {
+#proj-header {
     font-size: 4em;
     display: flex;
     text-align: left;
