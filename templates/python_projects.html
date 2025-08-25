@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Projects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/py_proj.css') }}">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/"
+      }
+    }
+    </script>
+    <script src="{{ url_for('static', filename='js/py_proj.js') }}" defer></script>
+</head>
+<body>
+
+
+    <div id="proj-header">Python Projects</div>
+
+    <div class="main">
+        <div class="tab">
+            <button class="tablinks" onclick="openProj(event, 'spam-filter', 'Spam Filter')">Spam Filter</button>
+            <button class="tablinks" onclick="openProj(event, 'Temp1', 'Temp1')">Temp 1</button>
+            <button class="tablinks" onclick="openProj(event, 'Temp2', 'Temp2')">Temp 2</button> 
+        </div>
+
+
+
+        <div id="spam-filter" class="tabcontent">
+            <input id="user-input-text" type="text" placeholder="Enter a message">
+            <button onclick="classifyMessage()">Check Text</button>
+            <p id="text-result"></p>
+
+            <input id="user-input-file" type="file">
+            <button onclick="classifyFile()">Check File</button>
+
+        </div>
+
+        <div id="Temp1" class="tabcontent">
+            <h3>Temp1</h3>
+            <p>Words words words.</p>
+        </div>
+
+        <div id="Temp2" class="tabcontent">
+            <h3>Temp2</h3>
+            <p>Words words words.</p>
+        </div>
+    </div>
+</body>
+</html>

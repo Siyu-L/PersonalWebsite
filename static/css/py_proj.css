@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+/* --- Global Styles --- */
+
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    background: black;
+    font-family: "Inconsolata", serif;
+
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* --- Layout Sections --- */
+
+
+#proj-header {
+    font-size: 6vw;
+    display: flex;
+    text-align: left;
+    margin-inline: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: transparent;
+    padding-left: 3%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    
+}
+
+.main {
+    display: flex;
+    flex: 1;
+}
+
+.tab {
+    float: left;
+    border: none;
+    width: 12vw;
+    height: 70vh;
+    flex-direction: column;
+    background-color: transparent;
+    padding-left: 3%;
+    padding-right: 5%;
+    display: block;
+}
+
+.tabcontent{
+    display: none;
+}
+
+.tablinks {
+    display: block;
+    background: none;
+    margin: 0;
+    margin-bottom: 20%;
+    padding:0;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-family: "Inconsolata", serif;
+    text-align: left;
+    font-size: 2vw;
+    height: 20%
+}
+
+/* --- Buttons --- */
+
+
+.tab button.active{
+    color: rgb(110, 110, 110);
+
+}
+
+.tab button {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+.tab button:hover {
+    color: rgb(110, 110, 110);
+    background-color: transparent;
+    text-decoration: none;
+}

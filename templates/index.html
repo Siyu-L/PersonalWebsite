@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/"
+      }
+    }
+    </script>
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</head>
+<body>
+
+    <div class="header">
+        <h1> Portfolio</h1>
+        <canvas id="headBG"></canvas>
+    </div>
+
+    <div class="body">
+        <h2>Graph Visualizer</h2>
+        <p>Web app to animate BFS, DFS, Dijkstras, etc.</p>
+        
+        <h2><a href="{{ url_for('python_projects') }}">Python Algorithms</a></h2>
+        <p>Implementation of puzzles, propositional logic, and spam filter</p>
+        
+        <h2>Stock Trading AI</h2>
+        <p>AI trained to trade stocks</p>
+    </div>
+
+    <h2>Contact me</h2>
+    <div class="contact-container">
+        <a href="https://github.com/Siyu-L"><img src="{{ url_for('static', filename='github-logo.svg') }}" alt="Github" width="50" height="50" class="contact"> </a>
+        <a href="mailto:lisiyu2022@gmail.com"><img src = "{{ url_for('static', filename='email-logo.svg') }}" alt="Email" width="50" height="50" class="contact"></a>
+    </div>
+
+</body>
+</html>
