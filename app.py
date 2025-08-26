@@ -25,11 +25,8 @@ def classify_text():
     data = request.get_json(silent=True) or {}
     text = data.get("text", "")
     prediction = "Spam" if spam_filter.is_spam(email_path=None, text_input=text) else "Ham"
-    indicate_spam = spam_filter.most_indicative_spam(5)
-    indicate_ham = spam_filter.most_indicative_ham(5)
-    return jsonify({"prediction": prediction, 
-                    "indicate spam": indicate_spam, 
-                    "indicate ham": indicate_ham })
+
+    return jsonify({"prediction": prediction})
 
 
 @app.route("/classify_file", methods=["POST"])
@@ -37,14 +34,19 @@ def classify_file():
     if "file" not in request.files:
         return jsonify({"error": "No file provided"}), 400
     
-    file = request.files["file"]
-    prediction = "Spam" if spam_filter.is_spam(email_path=file, text_input=None) else "Ham"
-    indicate_spam = spam_filter.most_indicative_spam(5)
-    indicate_ham = spam_filter.most_indicative_ham(5)    
-    return jsonify({"prediction": prediction, 
-                    "indicate spam": indicate_spam, 
-                    "indicate ham": indicate_ham })
+    file = request.files.get("file")
+    content = file.read().decode("utf-8")
+    prediction = "Spam" if spam_filter.is_spam(email_path=None, text_input=content) else "Ham"   
+    return jsonify({"prediction": prediction})
 
+@app.route("/indicative_word", methods=["POST"])
+def get_indicative_words():
+    data = request.get_json(silent=True) or {}
+    num = data.get("num", "")
+    indicate_spam = spam_filter.most_indicative_spam(num)
+    indicate_ham = spam_filter.most_indicative_ham(num)
+    return jsonify({"spam_ind": indicate_spam, 
+                    "ham_ind": indicate_ham })
 
 @app.route("/")
 def home():

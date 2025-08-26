@@ -1,7 +1,6 @@
 async function classifyMessage() {
     
     const userInput = document.getElementById("user-input-text").value;
-    console.log(userInput)
     const response = await fetch("/classify_text", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -16,12 +15,33 @@ async function classifyMessage() {
 async function classifyFile() {
 
     const fileInput = document.getElementById("user-input-file");
-    fileInput.addEventListener('change', () => {
-        if (fileInput.files.length === 1) {
-            console.log("File selected: ", elim.files[0]);
-        }
-    });
+    const file = fileInput.files[0]
+
+    const formData = new FormData();
+    formData.append("file", file);
+    const response = await fetch("/classify_file", {
+        method: "POST",
+        body: formData
+    })
     
+   const data = await response.json()
+   document.getElementById("file-result").innerText = "Result: " + data.prediction;
+
+}
+
+async function getIndicativeWords() {
+    const numInput = parseInt(document.getElementById("num-words").value, 10);
+    console.log(numInput)
+    const response = await fetch("/indicative_word", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({num: numInput})
+    })
+    
+    const data = await response.json()
+    document.getElementById("spam-words").innerText = "Spam: " + data.spam_ind
+    document.getElementById("ham-words").innerText = "Ham: " + data.ham_ind
+
 
 }
 
