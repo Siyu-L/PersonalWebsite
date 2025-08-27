@@ -96,14 +96,58 @@ canvas {
 }
 
 /* --- Spam Filter ---*/
-#user-input-text {
+#sf-header {
+    font-size: 1.5vw;
+    margin-bottom: 5%;
+}
 
+#sf-input-text {
+    background-color: transparent;
+    color: white;
+    height: 15vw; 
+    width: 20vw;
+    text-align: left;
+    vertical-align: top;
+    font-size: 1vw;
+    padding: 3%;
+    border-radius: 4%
+}
+
+#sf-input-text::placeholder {
+    color: rgb(161, 161, 161);
 
 }
 
-#user-input-file {
-
-
+#file-upload-zone {
+    height: 15vw;
+    width: 20vw;
+    border: 2px dashed white;
+    border-radius: 4%;
+    display: flex;
+    text-align: center;
+    color: rgb(161, 161, 161);
+    font-size: 1vw;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    padding: 3%;
 }
 
-#num-words {}
+#file-upload-zone:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-color: rgb(170, 170, 170);
+}
+
+#file-upload-zone:dragover {
+    background-color: rgba(255,255,255,0.2);
+    border-color: white;
+}
+
+
+
+.sf-button {
+    background-color: transparent;
+    border-radius: 5%;
+    color: white;
+    height: 2vw;
+    width: 5vw;
+}

@@ -1,6 +1,6 @@
 async function classifyMessage() {
     
-    const userInput = document.getElementById("user-input-text").value;
+    const userInput = document.getElementById("sf-input-text").value;
     const response = await fetch("/classify_text", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -14,7 +14,7 @@ async function classifyMessage() {
 
 async function classifyFile() {
 
-    const fileInput = document.getElementById("user-input-file");
+    const fileInput = document.getElementById("sf-input-file");
     const file = fileInput.files[0]
 
     const formData = new FormData();
@@ -30,8 +30,7 @@ async function classifyFile() {
 }
 
 async function getIndicativeWords() {
-    const numInput = parseInt(document.getElementById("num-words").value, 10);
-    console.log(numInput)
+    const numInput = parseInt(document.getElementById("sf-input-num").value, 10);
     const response = await fetch("/indicative_word", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -66,6 +65,32 @@ function openProj(evt, projId, projTitle) {
 
 }
 
+function dragOverHandler(ev) {
+    ev.preventDefault()
+    uploadZone.classList.add("dragover")
+}
+function dragLeaveHandler() {
+    uploadZone.classList.remove("dragover")
+}
+function dropHandler(ev) {
+    ev.preventDefault();
+    uploadZone.classList.remove("dragover");
+
+    if (ev.dataTransfer.items) {
+        fileInput.files = ev.dataTransfer.files;
+        classifyFile();
+
+    }
+}
+
 window.openProj = openProj;
 window.classifyMessage = classifyMessage;
 window.classifyFile = classifyFile;
+
+const fileInput = document.getElementById("sf-input-file");
+const uploadZone = document.getElementById("file-upload-zone");
+
+uploadZone.addEventListener("click", () => fileInput.click());
+uploadZone.addEventListener("dragover", dragOverHandler);
+uploadZone.addEventListener("dragleave", dragLeaveHandler);
+uploadZone.addEventListener("drop", dropHandler)

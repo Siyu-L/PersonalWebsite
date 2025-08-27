@@ -1,17 +1,13 @@
-from pathlib import Path
+import pickle
 from flask import Flask, request, jsonify, render_template
 from SpamFilter.spamfilter import SpamFilter
 
-BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR/"SpamFilter"/"training_data"
 
 
 app = Flask(__name__)
-spam_filter = SpamFilter(
-    ham_dir = str(DATA_DIR/"train"/"ham"),
-    spam_dir = str(DATA_DIR/"train"/"spam"),
-    smoothing = 1e-5
-)
+with open("spam_filter.pkl", "rb") as f:
+    spam_filter = pickle.load(f)
+
 
 
 @app.route("/python_projects")
