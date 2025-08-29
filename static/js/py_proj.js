@@ -65,6 +65,24 @@ function openProj(evt, projId, projTitle) {
 
 }
 
+window.openProj = openProj;
+window.classifyMessage = classifyMessage;
+window.classifyFile = classifyFile;
+
+// --- Text input auto classify --- //
+const textArea = document.getElementById("sf-input-text");
+textArea.addEventListener("input", ()=> {
+    if (textArea.value.trim() === "") {
+        document.getElementById("text-result").innerText = "";
+        return;
+    }
+    classifyMessage();
+});
+
+
+
+// --- File input auto classify --- //
+
 function dragOverHandler(ev) {
     ev.preventDefault()
     uploadZone.classList.add("dragover")
@@ -83,10 +101,6 @@ function dropHandler(ev) {
     }
 }
 
-window.openProj = openProj;
-window.classifyMessage = classifyMessage;
-window.classifyFile = classifyFile;
-
 const fileInput = document.getElementById("sf-input-file");
 const uploadZone = document.getElementById("file-upload-zone");
 
@@ -94,3 +108,17 @@ uploadZone.addEventListener("click", () => fileInput.click());
 uploadZone.addEventListener("dragover", dragOverHandler);
 uploadZone.addEventListener("dragleave", dragLeaveHandler);
 uploadZone.addEventListener("drop", dropHandler)
+
+fileInput.addEventListener("change", () => {
+    if (fileInput.files.length > 0) {
+        classifyFile();
+    }
+});
+
+// --- Page refresh ---//
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("sf-input-text").value = "";
+  document.getElementById("text-result").innerText = "";
+  document.getElementById("file-result").innerText = "";
+  document.getElementById("sf-input-file").value = "";
+});

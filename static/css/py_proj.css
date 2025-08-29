@@ -25,7 +25,7 @@ canvas {
 
 
 #proj-header {
-    font-size: 6vw;
+    font-size: 300%;
     display: flex;
     text-align: left;
     margin-inline: auto;
@@ -82,14 +82,14 @@ canvas {
 
 }
 
-.tab button {
+button {
     color: white;
     background-color: transparent;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.5s;
 }
-.tab button:hover {
+button:hover {
     color: rgb(110, 110, 110);
     background-color: transparent;
     text-decoration: none;
@@ -101,11 +101,25 @@ canvas {
     margin-bottom: 5%;
 }
 
+#sf-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.sf-zone {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
 #sf-input-text {
     background-color: transparent;
     color: white;
     height: 15vw; 
-    width: 20vw;
+    width: 100%;
     text-align: left;
     vertical-align: top;
     font-size: 1vw;
@@ -124,8 +138,11 @@ canvas {
     border: 2px dashed white;
     border-radius: 4%;
     display: flex;
+    flex-direction: column;
     text-align: center;
-    color: rgb(161, 161, 161);
+    align-items: center;
+    justify-content: center;
+    color: #a1a1a1;
     font-size: 1vw;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
@@ -133,21 +150,35 @@ canvas {
 }
 
 #file-upload-zone:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     border-color: rgb(170, 170, 170);
 }
 
-#file-upload-zone:dragover {
+#file-upload-zone.dragover {
     background-color: rgba(255,255,255,0.2);
     border-color: white;
 }
 
 
+#upload-image {
+    width: 40%;
+    height: 40%;
+
+}
 
 .sf-button {
     background-color: transparent;
     border-radius: 5%;
     color: white;
-    height: 2vw;
-    width: 5vw;
+    font-size: 0.75vw;
+    padding: 0.5em 0.5em;
+    white-space: nowrap;
+    border: 1px solid white;
+    transition: border-color 0.5s;
+
+}
+
+.sf-button:hover {
+    border-color:rgb(110, 110, 110);
+
 }

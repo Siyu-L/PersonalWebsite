@@ -30,20 +30,25 @@
 
 
         <div id="spam-filter" class="tabcontent">
-           <div id="sf-header">Enter text or file to classify </div>
+           <div id="sf-header"> Enter text or file to classify </div>
             
-            <textarea id="sf-input-text" type="text" placeholder="Enter a message"></textarea>
-            <button class="sf-button" onclick="classifyMessage()">Check Text</button>
-            <p id="text-result"></p>
-
-            <div id="file-upload-zone">
-                <p>Drag & Drop here, or click to upload</p>
-                <input id="sf-input-file" type="file" hidden>
+           <div id="sf-container">
+                <div class="sf-zone">
+                    <textarea id="sf-input-text" type="text" placeholder="Enter a message here..." autocomplete="off"></textarea>
+                    <p id="text-result" class="sf-result"></p>
+                </div>
+                
+                <div class="sf-zone">
+                    <div id="file-upload-zone">
+                        <p>Drag & Drop here, or click to upload</p>
+                        <img id="upload-image" src="{{ url_for('static', filename='upload-image.svg') }}">
+                        <input id="sf-input-file" type="file" hidden>
+                    </div>
+                    <p id="file-result"></p>
+                </div>
             </div>
-            <button class="sf-button" onclick="classifyFile()">Check File</button>
-            <p id="file-result"></p>
 
-            <p3>Enter number of most indicative spam/ham words: </p3>
+            <p>Enter number of most indicative spam/ham words: </p>
             <input id="sf-input-num" type="number">
             <button class="sf-button" onclick="getIndicativeWords()">Get Words</button>
             <p id="spam-words"></p>
