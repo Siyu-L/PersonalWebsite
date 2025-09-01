@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <script type="importmap">
     {
       "imports": {
@@ -24,11 +24,11 @@
     </div>
 
     <div class="body">
-        <h2>Graph Visualizer</h2>
-        <p>Web app to animate BFS, DFS, Dijkstras, etc.</p>
+        <h2>C Projects</h2>
+        <p>Terminal view in website to run Paint and Connect-N</p>
         
         <h2><a href="{{ url_for('python_projects') }}">Python Algorithms</a></h2>
-        <p>Implementation of puzzles, propositional logic, and spam filter</p>
+        <p>Implementation of spam filter, tile puzzle, and grid navigation</p>
         
         <h2>Stock Trading AI</h2>
         <p>AI trained to trade stocks</p>

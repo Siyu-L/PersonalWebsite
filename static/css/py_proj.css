@@ -182,3 +182,19 @@ button:hover {
     border-color:rgb(110, 110, 110);
 
 }
+
+/* --- Tile Puzzle --- */
+
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    background: rgb(83, 83, 83);
+    border-radius: 10px;
+    color: white;
+}
+.empty {
+    background: rgb(0, 0, 0);
+}

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Projects</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/py_proj.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
     <script type="importmap">
     {
       "imports": {
@@ -23,11 +25,9 @@
     <div class="main">
         <div class="tab">
             <button class="tablinks" onclick="openProj(event, 'spam-filter', 'Spam Filter')">Spam Filter</button>
-            <button class="tablinks" onclick="openProj(event, 'Temp1', 'Temp1')">Temp 1</button>
+            <button class="tablinks" onclick="openProj(event, 'tile-puzzle', 'Tile Puzzle')">Tile Puzzle</button>
             <button class="tablinks" onclick="openProj(event, 'Temp2', 'Temp2')">Temp 2</button> 
         </div>
-
-
 
         <div id="spam-filter" class="tabcontent">
            <div id="sf-header"> Enter text or file to classify </div>
@@ -55,9 +55,28 @@
             <p id="ham-words"></p>
         </div>
 
-        <div id="Temp1" class="tabcontent">
-            <h3>Temp1</h3>
-            <p>Words words words.</p>
+        <div id="tile-puzzle" class="tabcontent">
+            <div class="board" id="board"></div>
+            <div class="controls">
+              <button class="tile-button" onclick="makeMove('up')">↑</button><br>
+              <button class="tile-button" onclick="makeMove('left')">←</button>
+              <button class="tile-button" onclick="makeMove('down')">↓</button>
+              <button class="tile-button" onclick="makeMove('right')">→</button>
+            </div>
+            <div class="controls">
+                <button onclick="solve_iddfs()">Solve with IDDFS</button>
+                <button onclick="solve_a_star()">Solve with A*</button>
+            </div>
+            <div class="controls">
+                <p>Set tile puzzle rows and columns (default: 3x3)</p>
+                <label for="tile-rows">Rows:</label>
+                <input id="tile-rows" type="number">
+                <label for="tile-rows">Columns:</label>
+                
+                <input id="tile-cols" type="number">
+                <button id="create-board" onclick="setBoard()">Set Board</button>
+            </div>
+            <pre id="solution-box"></pre>
         </div>
 
         <div id="Temp2" class="tabcontent">

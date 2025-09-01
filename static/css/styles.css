@@ -31,7 +31,7 @@ canvas {
 }
 
 .header {
-    font-size: 30px;
+    font-size: 250%;
     display: flex;
     justify-content: center;
     font-family: "Inconsolata", serif;
@@ -72,6 +72,14 @@ h2,p {
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: normal;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
 }
 
 /* --- Links --- */
