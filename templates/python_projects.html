@@ -26,7 +26,7 @@
         <div class="tab">
             <button class="tablinks" onclick="openProj(event, 'spam-filter', 'Spam Filter')">Spam Filter</button>
             <button class="tablinks" onclick="openProj(event, 'tile-puzzle', 'Tile Puzzle')">Tile Puzzle</button>
-            <button class="tablinks" onclick="openProj(event, 'Temp2', 'Temp2')">Temp 2</button> 
+            <button class="tablinks" onclick="openProj(event, 'grid-nav', 'Grid Navigation')">Grid Navigation</button> 
         </div>
 
         <div id="spam-filter" class="tabcontent">
@@ -56,30 +56,30 @@
         </div>
 
         <div id="tile-puzzle" class="tabcontent">
+            <div class="puzzle-container">
+                <div class="controls">
+                    <button class="tile-button" onclick="makeMove('up')">↑</button><br>
+                    <button class="tile-button" onclick="makeMove('left')">←</button>
+                    <button class="tile-button" onclick="makeMove('down')">↓</button>
+                    <button class="tile-button" onclick="makeMove('right')">→</button>
+
+                    <button onclick="solve_iddfs()">Solve with IDDFS</button>
+                    <button onclick="solve_a_star()">Solve with A*</button>
+
+                    <p>Set tile puzzle rows and columns (default: 3x3)</p>
+                    <label for="tile-rows">Rows:</label>
+                    <input id="tile-rows" type="number">
+                    <label for="tile-rows">Columns:</label>
+                    <input id="tile-cols" type="number">
+
+                    <button id="create-board" onclick="setBoard()">Set Board</button>
+                </div>
             <div class="board" id="board"></div>
-            <div class="controls">
-              <button class="tile-button" onclick="makeMove('up')">↑</button><br>
-              <button class="tile-button" onclick="makeMove('left')">←</button>
-              <button class="tile-button" onclick="makeMove('down')">↓</button>
-              <button class="tile-button" onclick="makeMove('right')">→</button>
-            </div>
-            <div class="controls">
-                <button onclick="solve_iddfs()">Solve with IDDFS</button>
-                <button onclick="solve_a_star()">Solve with A*</button>
-            </div>
-            <div class="controls">
-                <p>Set tile puzzle rows and columns (default: 3x3)</p>
-                <label for="tile-rows">Rows:</label>
-                <input id="tile-rows" type="number">
-                <label for="tile-rows">Columns:</label>
-                
-                <input id="tile-cols" type="number">
-                <button id="create-board" onclick="setBoard()">Set Board</button>
             </div>
             <pre id="solution-box"></pre>
         </div>
 
-        <div id="Temp2" class="tabcontent">
+        <div id="grid-nav" class="tabcontent">
             <h3>Temp2</h3>
             <p>Words words words.</p>
         </div>

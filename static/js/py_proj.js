@@ -94,7 +94,7 @@ async function solve_iddfs() {
         headers: { "Content-Type": "application/json" }
     });
     const data = await res.json();
-    moves = data.solution[0]
+    moves = data.solution[0];
     for(let i = 0; i < moves.length; i++) {
         makeMove(moves[i])
         await sleep(500)
@@ -108,6 +108,12 @@ async function solve_a_star() {
         headers: { "Content-Type": "application/json" }
     });
     const data = await res.json();
+    console.log(data);
+    moves = data.solution;
+    for(let i = 0; i < moves.length; i++) {
+        makeMove(moves[i])
+        await sleep(500)
+    }
     document.getElementById("solution-box").innerText = "Solution: " + data.solution.join(", ");
 }
 

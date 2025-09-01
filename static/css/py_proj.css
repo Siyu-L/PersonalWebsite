@@ -185,6 +185,24 @@ button:hover {
 
 /* --- Tile Puzzle --- */
 
+.puzzle-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.controls {
+    display: flex;
+    flex: 0 0 200px;
+    flex-direction: column;
+    gap: 10px
+}
+
+.board {
+    flex: 1;
+    display: grid;
+    justify-content: center;
+}
 
 .tile {
     display: flex;
