@@ -1,5 +1,4 @@
 import pickle
-import json
 from flask import Flask, request, jsonify, render_template
 from SpamFilter.spamfilter import SpamFilter
 from tilepuzzle import TilePuzzle

@@ -58,21 +58,29 @@
         <div id="tile-puzzle" class="tabcontent">
             <div class="puzzle-container">
                 <div class="controls">
-                    <button class="tile-button" onclick="makeMove('up')">↑</button><br>
-                    <button class="tile-button" onclick="makeMove('left')">←</button>
-                    <button class="tile-button" onclick="makeMove('down')">↓</button>
-                    <button class="tile-button" onclick="makeMove('right')">→</button>
-
-                    <button onclick="solve_iddfs()">Solve with IDDFS</button>
-                    <button onclick="solve_a_star()">Solve with A*</button>
+                    <div class="movement-controls">
+                        <button class="tile-button" onclick="makeMove('up')">↑</button>
+                        <button class="tile-button" onclick="makeMove('left')">←</button>
+                        <button class="tile-button" onclick="makeMove('down')">↓</button>
+                        <button class="tile-button" onclick="makeMove('right')">→</button>
+                    </div>
 
                     <p>Set tile puzzle rows and columns (default: 3x3)</p>
-                    <label for="tile-rows">Rows:</label>
-                    <input id="tile-rows" type="number">
-                    <label for="tile-rows">Columns:</label>
-                    <input id="tile-cols" type="number">
-
+                    
+                    <div class="tile-rows-cols">
+                        <label for="tile-rows">Rows:</label>
+                        <input class="tile-input" id="tile-rows" type="number">
+                        <label for="tile-rows">Columns:</label>
+                        <input class="tile-input" id="tile-cols" type="number">
+                    </div>
                     <button id="create-board" onclick="setBoard()">Set Board</button>
+                    <div class="solve-controls">
+                        <button class="tile-solve" onclick="solve_iddfs()">Solve with IDDFS</button>
+                        <button class="tile-solve" onclick="solve_a_star()">Solve with A*</button>
+                    </div>
+
+
+
                 </div>
             <div class="board" id="board"></div>
             </div>
