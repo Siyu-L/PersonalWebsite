@@ -37,6 +37,12 @@ def init_board():
 def get_board():
     return jsonify({"board": puzzle.get_board()})
 
+@app.route("/scramble_board", methods=["GET"])
+def scramble_board():
+    puzzle.scramble(5)
+    return jsonify({"board": puzzle.get_board()})
+
+
 @app.route("/move", methods=["POST"])
 def move():
     data = request.json

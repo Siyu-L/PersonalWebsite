@@ -37,10 +37,22 @@ async function initBoard(row, col) {
 }
 
 async function setBoard() {
-    const row = parseInt(document.getElementById("tile-rows").value, 10);
-    const col = parseInt(document.getElementById("tile-cols").value, 10);
+    row = parseInt(document.getElementById("tile-rows").value, 10);
+    col = parseInt(document.getElementById("tile-cols").value, 10);
+    if (row > 8) { row = 8 }
+    if (row < 2) { row = 2 }
+    if (col > 8) { col = 8 }
+    if (col < 2) { col = 2 }
     initBoard(row, col)
 }
+
+async function scrambleBoard() {
+    const res = await fetch("/scramble_board");
+    const data = await res.json();
+    board = data.board;
+    renderBoard();
+}
+
 
 async function fetchBoard() {
     const res = await fetch("/get_board");

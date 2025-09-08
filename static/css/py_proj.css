@@ -193,7 +193,7 @@ button:hover {
 
 .controls {
     display: flex;
-    flex: 0 0 30%;
+    flex: 0 0 8vw;
     flex-direction: column;
     gap: 10px;
 
@@ -258,14 +258,14 @@ button:hover {
 
 .tiles-rows-cols {
     display: flex;
-
+    flex-direction: column;
 }
 
 .tile-input {
-    width: 50%;
+    width: 75%;
 }
 
-#create-board {
+.mod-board {
     background-color: transparent;
     border-radius: 5%;
     color: white;
@@ -284,7 +284,7 @@ button:hover {
 }
 
 .tile-solve {
-        background-color: transparent;
+    background-color: transparent;
     border-radius: 5%;
     color: white;
     font-size: 0.75vw;

@@ -68,18 +68,17 @@
                     <p>Set tile puzzle rows and columns (default: 3x3)</p>
                     
                     <div class="tile-rows-cols">
-                        <label for="tile-rows">Rows:</label>
+                        <label for="tile-rows">Rows (min 2, max 8):</label>
                         <input class="tile-input" id="tile-rows" type="number">
-                        <label for="tile-rows">Columns:</label>
+                        <label for="tile-rows">Columns (min 2, max 8):</label>
                         <input class="tile-input" id="tile-cols" type="number">
                     </div>
-                    <button id="create-board" onclick="setBoard()">Set Board</button>
+                    <button class="mod-board" id="create-board" onclick="setBoard()">Set Board</button>
+                    <button class="mod-board" id="scramble-board" onclick="scrambleBoard()">Scramble</button>
                     <div class="solve-controls">
                         <button class="tile-solve" onclick="solve_iddfs()">Solve with IDDFS</button>
                         <button class="tile-solve" onclick="solve_a_star()">Solve with A*</button>
                     </div>
-
-
 
                 </div>
             <div class="board" id="board"></div>
