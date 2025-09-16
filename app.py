@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 from SpamFilter.spamfilter import SpamFilter
 from tilepuzzle import TilePuzzle
 from tilepuzzle import create_tile_puzzle
-
+from gridnavigation import find_path
 
 app = Flask(__name__)
 with open("spam_filter.pkl", "rb") as f:
@@ -20,6 +20,27 @@ def home():
 @app.route("/python_projects")
 def python_projects():
     return render_template("python_projects.html")
+
+# Grid Navigation
+@app.route("/init_scene", methods=["POST"])
+def init_scene():
+    data = request.json
+    row = data["row"]
+    col = data["col"]
+    global scene
+    scene = [[False for _ in range(col)] for _ in range(row)]
+    return jsonify({"scene": scene})
+
+
+
+@app.route("/find_route", methods=["POST"])
+def find_route():
+    data = request.get_json()
+    start = tuple(data["start"])
+    goal = tuple(data["end"])
+    scene = data["scene"]
+    path = find_path(start, goal, scene)
+    return jsonify({"path": path})
 
 # Tile Puzzle
 
