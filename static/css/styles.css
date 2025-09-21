@@ -65,7 +65,7 @@ canvas {
 
 /* --- Typography --- */
 
-h2,p {
+h2,h3,p {
     font-family: "Inconsolata", serif;
     margin-inline: auto;
     text-align: center;

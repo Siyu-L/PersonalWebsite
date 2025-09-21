@@ -60,6 +60,9 @@ async function setScene() {
     if (col > 8) { col = 8 }
     if (col < 2) { col = 2 }
     initScene(row, col)
+    mode = null;
+    start = null;
+    end = null;
 }
 
 function renderGrid() {
