@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+#proj-header {
+    font: 300% "Inconsolata", serif;
+    display: flex;
+    text-align: left;
+    margin-inline: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: transparent;
+    padding-left: 3%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+
+}
+
+#terminal {
+    background: #111;
+    color: #ffffff;
+    padding: 1rem;
+    height: 400px;
+    overflow-y: auto;
+    font-family: monospace;
+    border-radius: 8px;
+
+}
+
+#terminal-input {
+    width: 100%;
+    margin-top: 1rem;
+    font-family: monospace;
+}

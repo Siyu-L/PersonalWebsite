@@ -21,6 +21,11 @@ def home():
 def python_projects():
     return render_template("python_projects.html")
 
+@app.route("/c_projects")
+def c_projects():
+    return render_template("c_projects.html")
+
+
 # Grid Navigation
 @app.route("/init_scene", methods=["POST"])
 def init_scene():
