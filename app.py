@@ -1,5 +1,5 @@
 import pickle
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from SpamFilter.spamfilter import SpamFilter
 from tilepuzzle import TilePuzzle
 from tilepuzzle import create_tile_puzzle
@@ -21,9 +21,9 @@ def home():
 def python_projects():
     return render_template("python_projects.html")
 
-@app.route("/c_projects")
-def c_projects():
-    return render_template("c_projects.html")
+@app.route("/cpu_projects")
+def cpu_projects():
+    return render_template("cpu_project.html")
 
 
 # Grid Navigation

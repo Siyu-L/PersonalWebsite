@@ -4,14 +4,10 @@
 /* --- Global Styles --- */
 
 body {
-    color: white;
-    font-family: "Inconsolata", serif;
-    margin: 0;
-    padding: 0;
     overflow-y: auto;
-    overflow-wrap: break-word;
-    background: black;
-
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 canvas {
@@ -25,7 +21,6 @@ canvas {
 /* --- Layout Sections --- */
 
 .header, .body, .contact-container {
-  padding: 2rem;
   z-index: 1;
   position: relative;
 }
@@ -34,29 +29,47 @@ canvas {
     font-size: 250%;
     display: flex;
     justify-content: center;
-    font-family: "Inconsolata", serif;
-    margin-inline: auto;
-    overflow: hidden;
-    white-space: nowrap;
-
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 25px;
+    width: 100%;
 }
 
+.about-me {
+    width: 75%;
+}
 
-.body {
-    max-width: 500px;
-    margin: 0 auto;
+.projects {
     color: white;
     padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+
+.project-container {
+    background: rgba(88, 88, 88, 0.295);
+    height: 400px;
+    width: 25%; 
+    margin: 4px;
+    border-radius: 20px;
+    border-color: white;
+    border-style: double;
+    border-width: 3px;
+    box-shadow: 0 0 20px rgba(114, 118, 237, 0.637);
+    padding-top: 20px;
+}
 
 .contact-container {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;   
 }
 .contact {
-    width: 75%
+    width: 75%;
+    height: 50px;
+    filter: drop-shadow(0 0 20px rgba(114, 118, 237, 0.637));
 }
 
 .contact:hover{
@@ -65,17 +78,33 @@ canvas {
 
 /* --- Typography --- */
 
-h2,h3,p {
+hr {
+    height: 3px;
+    border:double;
+    background-color: rgba(92, 92, 92, 0.413);
+    width: 75%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(114, 118, 237, 0.514);
+
+}
+
+h1,h2,h3,p {
+    color: white;
     font-family: "Inconsolata", serif;
-    margin-inline: auto;
     text-align: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: normal;
 }
 
+h1 {
+    margin-top: 40px;
+    margin-bottom: 8px;
+}
 h2 {
     font-size: 2rem;
+    margin-top: 8px;
+    margin-bottom: 25px;
 }
 
 p {
@@ -94,4 +123,12 @@ a:hover {
     color: rgb(110, 110, 110);
     background-color: transparent;
     text-decoration: none;
+}
+
+/* --- Specific ID --- */
+
+#profession-header {
+    margin-bottom: 5px;
+    margin-top: 20px;
+
 }
