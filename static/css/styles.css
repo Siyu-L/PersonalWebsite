@@ -44,21 +44,24 @@ canvas {
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 
 .project-container {
     background: rgba(88, 88, 88, 0.295);
-    height: 400px;
-    width: 25%; 
-    margin: 4px;
+    flex: 1;
+    max-width: 25%;
+    margin: 5px;
     border-radius: 20px;
     border-color: white;
     border-style: double;
     border-width: 3px;
     box-shadow: 0 0 20px rgba(114, 118, 237, 0.637);
-    padding-top: 20px;
+    padding: 20px 5px 20px 5px;
+    display: flex;
+    align-items: center;;
+    flex-direction: column;
 }
 
 .contact-container {
@@ -104,7 +107,7 @@ h1 {
 h2 {
     font-size: 2rem;
     margin-top: 8px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 p {
