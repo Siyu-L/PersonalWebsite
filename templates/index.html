@@ -14,7 +14,7 @@
       }
     }
     </script>
-    <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/playground.js') }}" defer></script>
 </head>
 <body>
 
@@ -42,6 +42,8 @@
         <div class="project-container">        
             <h2><a href="{{ url_for('python_projects') }}">Python Algorithms</a></h2>
             <p>Implementation of spam filter, tile puzzle, and grid navigation</p>
+            <img src="{{url_for('static', filename='a_star.png')}}" alt="CPU picture" width="90%" height="90%">
+
         </div>
         
         <div class="project-container">
